@@ -23,7 +23,7 @@ macros:
       Date: 2023-04-28
     arguments:
       - name: field_list
-        type: list
+        type: list[string]
         description: |
           A list of fields to concatenate together to form the surrogate key
 
@@ -87,7 +87,7 @@ macros:
       contract for the graph nodes is prone to change without warning. This macro makes handling for these changes easier and more DRY.
     arguments:
       - name: model
-        type: Node
+        type: relation
         description: A node object from the dbt graph
   - name: update_nested_dict
     description: |
@@ -95,14 +95,14 @@ macros:
       something that can be JSON serialized.
     arguments:
       - name: dictionary
-        type: mapping
+        type: dict[str, any]
         description: A mapping object to walk through
   - name: safe_copy_mapping
     description: |
       A macro that safely copies a mapping object (dictionary), using the `update_nested_dict` macro to ensure that the types are JSON serializable.
     arguments:
       - name: dictionary
-        type: mapping
+        type: dict[str, any]
         description: A mapping object to copy
   - name: type_handler
     description: |
@@ -127,7 +127,7 @@ macros:
       pre/post conversion values.
     arguments:
       - name: dictionary
-        type: mapping
+        type: dict[str, any]
         description: A mapping object to validate
 
   ## UPLOAD INDIVIDUAL DATASETS ##
