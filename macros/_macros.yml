@@ -31,7 +31,7 @@ macros:
     description: |
       Identify a relation in the graph from a relation name
     arguments:
-      - name: get_relation_name
+      - name: relation_name
         type: string
         description: |
           The name of the relation to return from the graph
@@ -264,18 +264,10 @@ macros:
       `upload_results` macro, alongside the `get_column_lists` macro to generate the column names and the
       `upload_dataset` macros to generate the data to be inserted.
     arguments:
-      - name: database_name
+      - name: dataset
         type: string
         description: |
-          The database name for the relation that the data is to be inserted into
-      - name: schema_name
-        type: string
-        description: |
-          The schema name for the relation that the data is to be inserted into
-      - name: table_name
-        type: string
-        description: |
-          The table name for the relation that the data is to be inserted into
+          The name of the dataset to return the data for e.g. `models`
       - name: fields
         type: string
         description: |
