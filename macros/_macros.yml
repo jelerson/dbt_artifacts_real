@@ -23,7 +23,7 @@ macros:
       Date: 2023-04-28
     arguments:
       - name: field_list
-        type: list[string]
+        type: list[any]
         description: |
           A list of fields to concatenate together to form the surrogate key
 
@@ -136,7 +136,7 @@ macros:
       The macro to support upload of the data to the exposures table.
     arguments:
       - name: exposures
-        type: list
+        type: list[any]
         description: |
           A list of exposure objects extracted from the dbt graph
 
@@ -149,7 +149,7 @@ macros:
       The macro to support upload of the data to the model_executions table.
     arguments:
       - name: models
-        type: list
+        type: list[any]
         description: |
           A list of model execution results objects extracted from the dbt result object
 
@@ -158,7 +158,7 @@ macros:
       The macro to support upload of the data to the models table.
     arguments:
       - name: models
-        type: list
+        type: list[any]
         description: |
           A list of test objects extracted from the dbt graph
 
@@ -167,7 +167,7 @@ macros:
       The macro to support upload of the data to the seed_executions table.
     arguments:
       - name: seeds
-        type: list
+        type: list[any]
         description: |
           A list of seed execution results objects extracted from the dbt result object
 
@@ -176,7 +176,7 @@ macros:
       The macro to support upload of the data to the seeds table.
     arguments:
       - name: seeds
-        type: list
+        type: list[any]
         description: |
           A list of seeds objects extracted from the dbt graph
 
@@ -185,7 +185,7 @@ macros:
       The macro to support upload of the data to the snapshot_executions table.
     arguments:
       - name: snapshots
-        type: list
+        type: list[any]
         description: |
           A list of snapshot execution results objects extracted from the dbt result object
 
@@ -194,7 +194,7 @@ macros:
       The macro to support upload of the data to the snapshots table.
     arguments:
       - name: snapshots
-        type: list
+        type: list[any]
         description: |
           A list of snapshots objects extracted from the dbt graph
 
@@ -203,7 +203,7 @@ macros:
       The macro to support upload of the data to the sources table.
     arguments:
       - name: sources
-        type: list
+        type: list[any]
         description: |
           A list of sources objects extracted from the dbt graph
 
@@ -212,7 +212,7 @@ macros:
       The macro to support upload of the data to the test_executions table.
     arguments:
       - name: tests
-        type: list
+        type: list[any]
         description: |
           A list of test execution results objects extracted from the dbt result object
 
@@ -221,7 +221,7 @@ macros:
       The macro to support upload of the data to the tests table.
     arguments:
       - name: tests
-        type: list
+        type: list[any]
         description: |
           A list of test objects extracted from the dbt graph
 
@@ -254,7 +254,7 @@ macros:
         description: |
           The name of the dataset to return the column names for e.g. `models`
       - name: objects_to_upload
-        type: list
+        type: list[any]
         description: |
           The objects to be used to generate the insert statement values - extracted from `get_dataset_content`
 
@@ -290,6 +290,6 @@ macros:
       The main macro called to upload the metadata into each of the source tables.
     arguments:
       - name: results
-        type: list
+        type: list[any]
         description: |
           The results object from dbt.
